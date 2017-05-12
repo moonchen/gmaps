@@ -10,6 +10,8 @@ all:	$(PACKAGE)
 $(PACKAGE):	$(SOURCE_FILES) $(CONFIG_FILE)
 	pip3 install --target $(MODULE_SUBDIR) $(MODULES)
 	zip -r $(PACKAGE) $(SOURCE_FILES) $(CONFIG_FILE) $(MODULE_SUBDIR)
+
+install:
 	aws lambda update-function-code --function-name recordEtaRoute0 --zip-file fileb://$(PACKAGE)
 
 clean:

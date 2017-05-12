@@ -5,8 +5,8 @@ class Route:
     def __init__(self, route_id):
         self.route_id = route_id
         route = get_route(self.route_id)
-        self.from_address = route[0]['address']
-        self.to_address = route[1]['address']
+        self.from_address = route[0]
+        self.to_address = route[1]
 
     def __str__(self):
         return 'From ' + self.from_address + ' to ' + self.to_address
